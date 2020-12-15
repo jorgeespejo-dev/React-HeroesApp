@@ -1,13 +1,20 @@
 import React from 'react'
+import queryString from 'query-string';
+
+import { useLocation } from 'react-router-dom';
 import { heroes } from '../data/heroes'
 import { HeroCard } from '../heroes/HeroCard';
 import { useForm } from '../hooks/useForm';
 
-export const SearchScreen = () => {
+export const SearchScreen = ({ history }) => {
+
+    //location
+    const location = useLocation();
+    const { q = '' } = queryString.parse(location.search);
 
     const heroesFiltered = heroes;
     const  [ formValues, handleInputChange ] = useForm ({
-        searchText: '',
+        searchText: q,
     }); 
 
     const {searchText} = formValues;
@@ -15,7 +22,7 @@ export const SearchScreen = () => {
 
     const handleSearch = (e) =>{
         e.preventDefault();
-        console.log(searchText);
+        history.push(`?q=${searchText}`);
     }
     
     return (
@@ -24,11 +31,12 @@ export const SearchScreen = () => {
             <hr />
 
             <div className="row">
-                <div className="col-5">
+                <div className="col-8 col-sm-8 col-md-6 col-lg-5 mx-auto">
                     <h4>Search Form</h4>
                     <hr />
 
                     <form onSubmit={handleSearch} >
+                        
                         <input 
                             name="searchText"
                             type="text"
@@ -39,16 +47,16 @@ export const SearchScreen = () => {
                             onChange={handleInputChange}
                         />
 
-                        <button
-                            type="submit"
-                            className="btn m-1 btn-block btn-outline-primary"
-                        >
-                            Search..
-                        </button>    
+
+                        <div className="d-grid gap-2">
+                            <button className="btn btn-outline-primary mt-2 mb-2" type="submit">Search..</button>
+                        </div>
+
+                        
                     </form>
                 </div>
 
-                <div className="col-7">
+                <div className="col-8 col-sm-8 col-md-6 col-lg-7 mx-auto">
                     <div className="row">
                         <h4> Results </h4>
                         <hr />

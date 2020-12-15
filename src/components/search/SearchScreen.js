@@ -32,7 +32,7 @@ export const SearchScreen = ({ history }) => {
             <hr />
 
             <div className="row">
-                <div className="col-8 col-sm-8 col-md-6 col-lg-5 mx-auto">
+                <div className="col-12 col-sm-12 col-md-8 col-lg-6 mx-auto">
                     <h4>Search Form</h4>
                     <hr />
 
@@ -57,7 +57,7 @@ export const SearchScreen = ({ history }) => {
                     </form>
                 </div>
 
-                <div className="col-8 col-sm-8 col-md-6 col-lg-7 mx-auto">
+                <div className="col-12 mx-auto">
                     <div className="row">
                         <h4> Results </h4>
                         <hr />

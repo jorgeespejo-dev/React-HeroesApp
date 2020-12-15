@@ -11,15 +11,14 @@ export const DashboardRoutes = () => {
         <>
            <Navbar /> 
 
-           <div className="container mt-2">
+           <div className="container py-4">
                 <Switch>
                     <Route exact path="/marvel" component={MarvelScreen} />
-                    <Route exact path="/heroe/:heroeId" component={HeroesScreen} />
+                    <Route exact path="/hero/:heroeId" component={HeroesScreen} />
                     <Route exact path="/dc" component={DCScreen} />
 
                     <Redirect to="/marvel" />
                 </Switch>
-
            </div>
         </>
     )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Redirect, useParams } from 'react-router-dom'
 import { getHeroById } from '../selectors/getHeroById';
 
@@ -6,7 +6,8 @@ export const HeroesScreen = ({ history }) => {
 
     const {heroeId} = useParams();
 
-    const hero = getHeroById(heroeId);
+    const hero =  useMemo(() => getHeroById(heroeId), [ heroeId ]);
+
 
     if( !hero ) {
         return <Redirect to="/" />
@@ -37,14 +38,14 @@ export const HeroesScreen = ({ history }) => {
     return (
         <div>
             <div className="row mt-5">
-                <div className="col-4">
+                <div className="col-8 col-sm-8 col-md-6 col-lg-4 mx-auto">
                     <img 
                         src={`../assets/heroes/${heroeId}.jpg`}
                         alt={ superhero }
-                        className="img-thumbnail"
+                        className="img-thumbnail animate__animated animate__fadeInLeft animate__faster"
                     />
                 </div>
-                <div className="col-8">
+                <div className="col-8 col-sm-8 col-md-6 col-lg-8 mx-auto">
                     <h3> {superhero} </h3>
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item"><b> Alter ego:</b> {alter_ego}</li>

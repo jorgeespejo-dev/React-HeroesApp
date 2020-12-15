@@ -12,7 +12,7 @@ export const HeroCard = ({
  }) => {
     return (
 
-        <div className="col-sm-12 col-md-6 col-lg-3">
+        <div className="col-12 col-sm-12 col-md-6 col-lg-3">
             <div className="card bg-dark text-white mb-3">
                 <img src={ `./assets/heroes/${ id }.jpg` } className="card-img-top" alt={ superhero } />
                 <div className="card-img-overlay" style={ {backgroundColor: 'rgba(52, 52, 52, 0.5)'} }>

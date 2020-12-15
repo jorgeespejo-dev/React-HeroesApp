@@ -14,17 +14,24 @@ export const HeroesScreen = ({ history }) => {
     }
 
     const handleReturn = () =>{
-        switch (publisher) {
-            case 'DC Comics':
-                history.push('/dc');
-                break;
-            case 'Marvel Comics':
-                history.push('/marvel');
-                break;
-     
-            default:
-                history.push('/');
+
+        if( history.length <=2 ) {
+            history.push('/');
+        } else {
+            history.goBack();
         }
+
+        // switch (publisher) {
+        //     case 'DC Comics':
+        //         history.push('/dc');
+        //         break;
+        //     case 'Marvel Comics':
+        //         history.push('/marvel');
+        //         break;
+     
+        //     default:
+        //         history.push('/');
+        // }
     }
 
     const {

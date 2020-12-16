@@ -4,5 +4,5 @@ Aplicación React SPA, donde se utilizo: Router, History push, useMemo, queryStr
 
 utilice
 ```
-npm intall
+npm install
 ```

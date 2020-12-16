@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import Pagination from "react-js-pagination";
-import { getHeroesByPublisher } from '../selectors/getHeroesByPublisher'
+import { getHeroesByPublisher } from '../../selectors/getHeroesByPublisher';
 import { HeroCard } from './HeroCard';
 
 export const HeroList = ({ publisher }) => {

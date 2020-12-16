@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { HashRouter  as Router, Switch } from "react-router-dom";
 import { AuthContext } from "../auth/AuthContext";
 import { LoginScreen } from "../components/login/LoginScreen";
 import { DashboardRoutes } from "./DashboardRoutes";
@@ -9,7 +9,6 @@ import { PublicRoute } from "./PublicRoute";
 
 export const AppRouter = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   return (
     <Router>
